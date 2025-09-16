@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background: rgb(240, 240, 240);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: rgb(29, 74, 114);
+        }
+
+        .container {
+            background: rgb(169, 172, 177);
+            width: 250px;
+            height: 350px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 6px 8px 20px 10px rgb(6, 121, 67);
+            border-bottom: double 5px rgb(0, 0, 0);
+            border-left: double 5px rgb(0, 0, 0);
+            border-right: double 5px rgb(0, 0, 0);
+            border-top: double 5px rgb(0, 0, 0);
+
+
+        }
+
+        #digits8 {
+            position: relative;
+            right: 20px;
+            font-size: 30px;
+
+        }
+
+        #digits8:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digits7 {
+            position: relative;
+            right: 10px;
+            font-size: 30px;
+
+        }
+
+        #digits7:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digits9 {
+            position: relative;
+            right: 0px;
+            font-size: 30px;
+        }
+
+        #digits9:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digitsdivide {
+            position: relative;
+            left: 10px;
+            font-size: 30px;
+            width: 35px
+        }
+
+        #digitsdivide:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digits4 {
+            position: relative;
+            right: 20px;
+            top: 25px;
+            font-size: 30px;
+        }
+
+        #digits4:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digits5 {
+            position: relative;
+            right: 10px;
+            top: 25px;
+            font-size: 30px;
+        }
+
+        #digits5:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digits6 {
+            position: relative;
+            right: 0px;
+            top: 25px;
+            font-size: 30px;
+        }
+
+        #digits6:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digitsmultiply {
+            position: relative;
+            left: 10px;
+            top: 25px;
+            font-size: 30px;
+            width: 35px
+        }
+
+        #digitsmultiply:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digits1 {
+            position: relative;
+            right: 20px;
+            top: 45px;
+            font-size: 30px;
+        }
+
+        #digits1:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digits2 {
+            position: relative;
+            right: 10px;
+            top: 45px;
+            font-size: 30px;
+        }
+
+        #digits2:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digits3 {
+            position: relative;
+            right: 0px;
+            top: 45px;
+            font-size: 30px;
+        }
+
+        #digits3:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digits- {
+            position: relative;
+            left: 10px;
+            top: 45px;
+            font-size: 30px;
+            width: 35px
+        }
+
+        #digits-:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digits0 {
+            position: relative;
+            right: 13px;
+            top: 65px;
+            font-size: 30px;
+        }
+
+        #digits0:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digitsdot {
+            position: relative;
+            right: 2.9px;
+            width: 35px;
+            top: 65px;
+            font-size: 30px;
+        }
+
+        #digitsdot:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digitsequal {
+            position: relative;
+            top: 65px;
+            left: 4.9px;
+            width: 82px;
+            display: inline;
+            font-size: 30px;
+            background: #15ff00;
+        }
+
+        #digitsequal:hover {
+            background: rgb(0, 255, 13);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digitsadd {
+            position: relative;
+            right: 55.9px;
+            top: 85px;
+            font-size: 30px;
+        }
+
+        #digitsadd:hover {
+            background: rgb(9, 255, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #digitsc {
+            position: relative;
+            right: 45.9px;
+            width: 35px;
+            top: 85px;
+            font-size: 30px;
+            background: #ff0000;
+        }
+
+        #digitsc:hover {
+            background: rgb(255, 0, 0);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button {
+            animation: alternate;
+            border-radius: 8px;
+            box-shadow: 5px 0px 8px 5px rgb(0, 0, 0);
+            border: double 3px rgb(0, 0, 0);
+        }
+    </style>
+
+    <h1 id="title">Calculator App </h1>
+    <div class="container">
+        <div id="display">
+            <input type="text" id="result" disabled
+                style="width: 250px; height: 30px; border-radius: 10px; box-shadow: 5px 0px 8px 2px rgb(27, 1, 1); justify-content: center;">
+        </div> <br>
+        <button id="digits8" onclick="append('8')">8</button>
+        <button id="digits7" onclick="append('7')">7</button>
+        <button id="digits9" onclick="append('9')">9</button>
+        <button id="digitsdivide" onclick="append('/')">/</button> <br>
+        <button id="digits4" onclick="append('4')">4</button>
+        <button id="digits5" onclick="append('5')">5</button>
+        <button id="digits6" onclick="append('6')">6</button>
+        <button id="digitsmultiply" onclick="append('*')">X</button> <br>
+        <button id="digits1" onclick="append('1')">1</button>
+        <button id="digits2" onclick="append('2')">2</button>
+        <button id="digits3" onclick="append('3')">3</button>
+        <button id="digits-" onclick="append('-')">-</button> <br>
+        <button id="digits0" onclick="append('0')">0</button>
+        <button id="digitsdot" onclick="append('.')">.</button>
+        <button id="digitsequal" onclick="Calculator()">=</button> <br>
+        <button id="digitsadd" onclick="append('+')">+</button>
+        <button id="digitsc" onclick="clearD()">C</button>
+        
+
+    </div>
+
+    <script>
+        let result = document.getElementById('result');
+
+        function append(value) {
+            let a = value
+            result.value += a
+
+        }
+
+        function Calculator() {
+            answer = eval(result.value)
+            result.value = answer
+
+
+        }
+        function clearD() {
+            result.value="";
+
+        }
+
+    </script>
+</body>
+
+</html>
